@@ -1,11 +1,13 @@
+import { useLocation } from "react-router-dom";
 import AdminHello from "./AdminHello";
 
 const Admin = () => {
+  const { state } = useLocation();
   return (
     <main className="admin">
       <AdminHello />
 
-      <h2>Admin</h2>
+      <h2>Admin, {state}</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
         aperiam esse molestiae, laborum reiciendis suscipit doloribus blanditiis
