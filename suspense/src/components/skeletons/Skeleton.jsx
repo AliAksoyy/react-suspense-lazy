@@ -1,7 +1,8 @@
-import React from "react";
+import "./Skeleton.css";
 
-const Skeleton = () => {
-  return <div>Skeleton</div>;
+const Skeleton = ({ classes }) => {
+  const classNames = `skeleton ${classes} animate-pulse`;
+
+  return <div className={classNames}></div>;
 };
-
 export default Skeleton;

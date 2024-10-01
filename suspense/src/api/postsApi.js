@@ -2,20 +2,14 @@ import axios from "axios";
 
 const delay = () => new Promise((res) => setTimeout(() => res(), 800));
 
-const usersApi = axios.create({
+const postsApi = axios.create({
   baseURL: "http://localhost:3500",
 });
 
-export const usersUrlEndpoint = "/users";
+export const postsUrlEndpoint = "/posts";
 
-export const getUsers = async () => {
+export const getPostsByUserId = async (url, userId) => {
   await delay();
-  const response = await usersApi.get(usersUrlEndpoint);
-  return response.data;
-};
-
-export const getUserById = async (url, userId) => {
-  await delay();
-  const response = await usersApi.get(`${url}/${userId}`);
+  const response = await postsApi.get(`${url}?userId=${userId}`);
   return response.data;
 };

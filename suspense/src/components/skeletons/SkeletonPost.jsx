@@ -1,9 +1,13 @@
-import React from 'react'
+import Skeleton from "./Skeleton";
 
 const SkeletonPost = () => {
   return (
-    <div>SkeletonPost</div>
-  )
-}
-
-export default SkeletonPost
+    <div className="post">
+      <Skeleton classes="title width-50" />
+      <Skeleton classes="text width-100" />
+      <Skeleton classes="text width-100" />
+      <Skeleton classes="text width-100" />
+    </div>
+  );
+};
+export default SkeletonPost;

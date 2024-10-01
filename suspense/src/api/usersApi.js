@@ -8,5 +8,14 @@ const usersApi = axios.create({
 
 export const usersUrlEndpoint = "/users";
 
-const getUser = async(url)=>{}
-const getUserById = async(url,userId)=>{}
+export const getUsers = async () => {
+  await delay();
+  const response = await usersApi.get(usersUrlEndpoint);
+  return response.data;
+};
+
+export const getUserById = async (url, userId) => {
+  await delay();
+  const response = await usersApi.get(`${url}/${userId}`);
+  return response.data;
+};
